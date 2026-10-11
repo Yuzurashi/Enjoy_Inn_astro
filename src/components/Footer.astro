@@ -1,0 +1,30 @@
+---
+import Social from "./Social.astro";
+
+const pageTitle = "The Enjoy Inn Chinese Restaurant";
+const buttonStyle =
+  "hover:brightness-70 rounded-full px-4 py-2 text-sm font-semibold cursor-pointer select-none";
+---
+
+<footer class="flex fixed bottom-0 left-0 w-full justify-center py-3 bg-red-800 text-white">
+  <section class="flex flex-col sm:flex-row items-center justify-between align-center w-full px-7 max-w-5xl">
+    <a href="/" class="cursor-pointer select-none flex items-center gap-3">
+      <img src="./images/logo.svg" alt="logo image" class="" />
+      <p class="font-bold text-2xl">{pageTitle}</p>
+    </a>
+
+    <a class={buttonStyle} href="/">
+      © 2026 Fake Company
+    </a>
+
+    <div class="flex flex-row gap-5">
+      <Social
+        class={buttonStyle}
+        platform="facebook"
+        username="Jeffrey Chong"
+      />
+      <Social class={buttonStyle} platform="github" username="Yuzurashi" />
+      <Social class={buttonStyle} platform="youtube" username="@bepprey" />
+    </div>
+  </section>
+</footer>

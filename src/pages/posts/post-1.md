@@ -1,11 +1,14 @@
 ---
-title: "My First Blog Post"
+layout: ../../layouts/MarkdownPostLayout.astro
+
+title: "First Blog Post"
 pubDate: 2022-07-01
 description: "This is the first post of my new Astro blog."
-author: "Astro Learner"
+author: "Jeff"
 image:
-  url: "https://docs.astro.build/assets/rose.webp"
-  alt: "The Astro logo on a dark background with a pink glow."
+  url: "https://cdna.artstation.com/p/users/avatars/003/380/420/large/e845f894623db93150715469d39d6d5c.jpg?1687967235"
+
+  alt: "Image of Jeff."
 tags: ["astro", "blogging", "learning in public"]
 ---
 

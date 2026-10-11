@@ -1,4 +1,13 @@
 ---
+import BaseLayout from "../layouts/Baselayout.astro";
+import BlogPost from "../components/BlogPost.astro";
+
+const allPosts = Object.values(
+  import.meta.glob("./posts/*.md", { eager: true }),
+);
+
+const pageTitle = "Blog Title";
+
 // import Welcome from '../components/Welcome.astro';
 // import Layout from '../layouts/Layout.astro';
 
@@ -6,66 +15,11 @@
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Enjoy Inn</title>
-    <link rel="stylesheet" href="./css/app.css" />
-  </head>
-  <body>
-    <header class="flex justify-center py-3 shadow-lg bg-red-800 text-white">
-      <section class="flex flex-col sm:flex-row items-center justify-between align-center w-full px-7 max-w-5xl gap-3">
-        <a href="/" class="cursor-pointer select-none flex items-center gap-3">
-          <img src="./images/logo.svg" alt="logo image" class="" />
-          <p class="font-bold text-2xl">The Enjoy Inn Chinese Restaurant</p>
-        </a>
-      </section>
-
-      <a href="/">Home</a>
-      <a href="/menu">Menu</a>
-      <a href="/blog">Blog</a>
-    </header>
-    <!-- Header End -->
-    <body>
-      <h1 class="text-center font-bold text-2xl">
-        The Enjoy Inn Chinese Restaurant
-      </h1>
-
-      <h1>My Astro Learning Blog</h1>
-      <p>This is where I will post about my journey learning Astro.</p>
-      <ul>
-        <li>
-          <a href="/posts/post-1/">Post 1</a>
-        </li>
-        <li>
-          <a href="/posts/post-2/">Post 2</a>
-        </li>
-        <li>
-          <a href="/posts/post-3/">Post 3</a>
-        </li>
-      </ul>
-    </body>
-
-    <!-- Footer -->
-    <footer class="flex fixed bottom-0 left-0 w-full justify-center py-3 bg-red-800 text-white">
-      <section class="flex flex-col sm:flex-row items-center justify-between align-center w-full px-7 max-w-5xl">
-        <a
-          href="/index.html"
-          class="cursor-pointer select-none flex items-center gap-3"
-        >
-          <img src="./images/logo.svg" alt="logo image" class="" />
-          <p class="font-bold text-2xl">The Enjoy Inn Chinese Restaurant</p>
-        </a>
-
-        <a
-          href="./about.astro"
-          class="px-4 py-2 text-sm font-semibold text-quaternary"
-        >
-          ABOUT
-        </a>
-      </section>
-    </footer>
-  </body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+  <p>This is where I will post about my journey learning Astro.</p>
+  <ul>
+    {allPosts.map((post: any) => (
+      <BlogPost url={post.url} title={post.frontmatter.title} />
+    ))}
+  </ul>
+</BaseLayout>

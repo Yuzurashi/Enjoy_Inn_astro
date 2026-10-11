@@ -1,0 +1,37 @@
+---
+const { pageTitle } = Astro.props;
+
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+
+// http://localhost:4321/
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <slot />
+    <title>{pageTitle}</title>
+    <link rel="stylesheet" href="./css/app.css" />
+    <link rel="stylesheet" href="./tailwind/config.css" />
+  </head>
+  <body>
+    <!-- Header Start -->
+    <!-- src/components -->
+    <Navigation />
+    <!-- Header End -->
+
+    <body>
+      <h1 class="text-center font-bold text-2xl">{pageTitle} - Home</h1>
+    </body>
+
+    <!-- Footer -->
+    <Footer />
+    <!-- Footer End -->
+    <script>
+      import "../js/menu.js";
+    </script>
+  </body>
+</html>

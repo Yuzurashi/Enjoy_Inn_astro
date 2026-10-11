@@ -1,58 +1,13 @@
 ---
+import BaseLayout from "../layouts/Baselayout.astro";
 const pageTitle = "The Enjoy Inn Chinese Restaurant";
-
-// import Welcome from '../components/Welcome.astro';
-// import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{pageTitle}</title>
-    <link rel="stylesheet" href="./css/app.css" />
-  </head>
-  <body>
-    <header class="flex justify-center py-3 shadow-lg bg-red-800 text-white">
-      <section class="flex flex-col sm:flex-row items-center justify-between align-center w-full px-7 max-w-5xl gap-3">
-        <a href="/" class="cursor-pointer select-none flex items-center gap-3">
-          <img src="./images/logo.svg" alt="logo image" class="" />
-          <p class="font-bold text-2xl">{pageTitle}</p>
-        </a>
-      </section>
+<!-- Uses Baselayout  -->
+<!-- Baselayout.astro has a '<slot />' tag  -->
+<!-- This slot tag, information is everything between teh <BasseLayout> tags on this page -->
 
-      <a href="/">Home</a>
-      <a href="/menu">About</a>
-      <a href="/blog">Blog</a>
-    </header>
-    <!-- Header End -->
-
-    <body>
-      <h1 class="text-center font-bold text-2xl">{pageTitle} - Home</h1>
-    </body>
-
-    <!-- Footer -->
-    <footer class="flex fixed bottom-0 left-0 w-full justify-center py-3 bg-red-800 text-white">
-      <section class="flex flex-col sm:flex-row items-center justify-between align-center w-full px-7 max-w-5xl">
-        <a
-          href="/index.html"
-          class="cursor-pointer select-none flex items-center gap-3"
-        >
-          <img src="./images/logo.svg" alt="logo image" class="" />
-          <p class="font-bold text-2xl">The Enjoy Inn Chinese Restaurant</p>
-        </a>
-
-        <a
-          href="./about.astro"
-          class="px-4 py-2 text-sm font-semibold text-quaternary"
-        >
-          ABOUT
-        </a>
-      </section>
-    </footer>
-  </body>
-</html>
+<BaseLayout>
+  <h1 class="fs-5 text-center text-2xl font-bold">{pageTitle}</h1>
+  <h1>Welcome to the {pageTitle} online site</h1>
+</BaseLayout>

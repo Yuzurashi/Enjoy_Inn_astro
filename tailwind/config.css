@@ -1,3 +1,27 @@
 @import "tailwindcss";
-/* Do the tailwind thing */
+
+@theme {
+  --color-primary: #e8f5e9;
+  --color-secondary: #a5d6a7;
+  --color-tertiary: #66bb6a;
+  --color-quaternary: #1b5e20;
+
+  --color-foreground: #404040;
+  --color-background: #f8f8f8;
+  --color-surface: #e0e0e0;
+  --color-surface-light: #edebeb;
+
+  --animate-pop-in: pop-in 200ms ease-out;
+
+  @keyframes pop-in {
+    from {
+      scale: 0.5;
+    }
+    to {
+      scale: 1;
+    }
+  }
+}
+
+/* Tailwind thing */
 /* $ npx @tailwindcss/cli -i ./tailwind/config.css -o ./Public/CSS/app.css --watch */
