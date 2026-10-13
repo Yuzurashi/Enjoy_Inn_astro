@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #e8f5e9;
-  --color-secondary: #a5d6a7;
+  --color-primary: #9f0713; /* Red */
+  --color-secondary: #9e1924;
   --color-tertiary: #66bb6a;
   --color-quaternary: #1b5e20;
 
@@ -10,17 +10,29 @@
   --color-background: #f8f8f8;
   --color-surface: #e0e0e0;
   --color-surface-light: #edebeb;
+}
 
-  --animate-pop-in: pop-in 200ms ease-out;
+html.dark {
+  background-color: #4d4d4d;
+  color: #fff;
+}
 
-  @keyframes pop-in {
-    from {
-      scale: 0.5;
-    }
-    to {
-      scale: 1;
-    }
-  }
+.dark .menu {
+  background-color: #fff;
+  color: #000;
+}
+/* 
+.dark .nav-links a:hover,
+.dark .nav-links a:focus {
+  color: #0d0950;
+} */
+
+.dark .nav-links a {
+  color: #fff;
+}
+
+.dark a {
+  color: #ff9776;
 }
 
 /* Tailwind thing */
