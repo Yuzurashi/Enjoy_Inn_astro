@@ -1,11 +1,12 @@
 ---
 import BaseLayout from "../layouts/Baselayout.astro";
 import Greeting from "../components/Greeting";
+import HeroImage from "../components/hero.astro";
+
 const pageTitle = "The Enjoy Inn Chinese Restaurant";
 ---
 
 <BaseLayout>
-  <h1 class="fs-5 text-center text-2xl font-bold">{pageTitle}</h1>
-  <h1 class="text-center">Welcome to the {pageTitle} online site</h1>
+  <HeroImage />
   <Greeting client:load messages={["歡迎", "你好", "欢迎", "Hello"]} />
 </BaseLayout>

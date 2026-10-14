@@ -5,7 +5,8 @@ import Footer from "../components/Footer.astro";
 import "../../tailwind/config.css";
 import "../../public/css/app.css";
 
-const { pageTitle } = Astro.props;
+// const { pageTitle } = Astro.props;
+const pageTitle = "Enjoy Inn Chinese Restaurant";
 ---
 
 <html lang="en">
@@ -15,10 +16,14 @@ const { pageTitle } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../../public/images/logo_pot.svg"
+    />
   </head>
   <body>
     <Header />
-    <h1>{pageTitle}</h1>
     <slot />
     <Footer />
     <script>
