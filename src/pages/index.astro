@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/Baselayout.astro";
 import Greeting from "../components/Greeting";
 import HeroImage from "../components/hero.astro";
+import Questions from "../components/Questions.astro";
 
 const pageTitle = "The Enjoy Inn Chinese Restaurant";
 ---
@@ -9,4 +10,7 @@ const pageTitle = "The Enjoy Inn Chinese Restaurant";
 <BaseLayout>
   <HeroImage />
   <Greeting client:load messages={["歡迎", "你好", "欢迎", "Hello"]} />
+
+  <!-- Questions Layout -->
+  <Questions />
 </BaseLayout>

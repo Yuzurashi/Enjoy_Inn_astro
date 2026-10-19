@@ -2,8 +2,26 @@
 const pageTitle = "The Enjoy Inn - Menu";
 
 import BaseLayout from "../layouts/Baselayout.astro";
+import MenuPost from "../components/MenuPost.astro";
+const allMenu = Object.values(
+  import.meta.glob("../pages/menu/*.md", { eager: true }),
+);
 ---
 
 <BaseLayout>
-  <h1 class="fs-5 text-center text-2xl font-bold">{pageTitle}</h1>
+  <!-- Frequent Questions -->
+  <section class="flex flex-col gap-3 w-full max-w-5xl my-10 px-5 items-center text-black">
+    <h1 class="fs-5 text-center text-2xl font-bold">{pageTitle}</h1>
+
+    <div class="flex flex-col">
+      <!-- Listing all the question.md -->
+      {allMenu.map((post: any) => (
+        <MenuPost
+          menuTitle={post.frontmatter.menuTitle}
+          dish={post.frontmatter.dish}
+          price={post.frontmatter.price}
+        />
+      ))}
+    </div>
+  </section>
 </BaseLayout>

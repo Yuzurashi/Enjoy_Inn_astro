@@ -2,14 +2,14 @@
 
 @theme {
   --color-primary: #9f0713; /* Red */
-  --color-secondary: #9e1924;
+  --color-secondary: #ad313a;
   --color-tertiary: #66bb6a;
   --color-quaternary: #1b5e20;
 
-  --color-foreground: #404040;
-  --color-background: #f8f8f8;
-  --color-surface: #e0e0e0;
-  --color-surface-light: #edebeb;
+  --color-foreground: #404040; /* Dark Grey*/
+  --color-background: #f8f8f8; /* Light Grey*/
+  --color-surface: #e0e0e0; /* Light Grey */
+  --color-surface-light: #edebeb; /* Lighter Grey */
 }
 
 html.dark {
