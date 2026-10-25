@@ -1,5 +1,8 @@
 ---
 const { platform, username } = Astro.props;
+const pageButtons = "text-2xl font-italic";
 ---
 
-<a href={`https://www.${platform}.com/${username}`}>{platform}</a>
+<a class={pageButtons} href={`https://www.${platform}.com/${username}`}>
+  {platform}
+</a>

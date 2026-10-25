@@ -38,5 +38,6 @@ html.dark {
 :has(.menu[aria-expanded="true"]) .nav-links {
   display: unset;
 }
+
 /* Tailwind thing */
 /* $ npx @tailwindcss/cli -i ./tailwind/config.css -o ./Public/CSS/app.css --watch */
